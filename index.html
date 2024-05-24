@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In / Sign Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #222;
+            color: #fff;
+        }
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #ffcc00;
+        }
+        .btn {
+            display: inline-block;
+            width: 150px;
+            padding: 10px 0;
+            margin: 10px 10px 0;
+            text-align: center;
+            color: #fff;
+            background: linear-gradient(90deg, #ff6600, #ff3300);
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .btn:hover {
+            background: linear-gradient(90deg, #ff3300, #ff6600);
+        }
+        .options {
+            display: none;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #666;
+        }
+        .option-btn {
+            display: block;
+            width: 200px;
+            padding: 10px 0;
+            margin: 10px auto;
+            text-align: center;
+            color: #fff;
+            background: linear-gradient(90deg, #0099ff, #0066ff);
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .option-btn:hover {
+            background: linear-gradient(90deg, #0066ff, #0099ff);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Choose an Option</h2>
+        <button class="btn" id="signupBtn">Sign Up</button>
+        <button class="btn" id="signinBtn">Sign In</button>
+
+        <div id="signupOptions" class="options">
+            <h2>Sign Up Options</h2>
+            <button class="option-btn" id="signupGoogleBtn">Sign Up with Google</button>
+            <button class="option-btn" id="signupFacebookBtn">Sign Up with Facebook</button>
+            <button class="option-btn" id="signupEmailBtn">Sign Up with Email</button>
+        </div>
+
+        <div id="signinOptions" class="options">
+            <h2>Sign In Options</h2>
+            <button class="option-btn" id="signinGoogleBtn">Sign In with Google</button>
+            <button class="option-btn" id="signinFacebookBtn">Sign In with Facebook</button>
+            <button class="option-btn" id="signinEmailBtn">Sign In with Email</button>
+        </div>
+    </div>
+
+    <script>
+        // Sign Up button clicked
+        document.getElementById("signupBtn").addEventListener("click", function() {
+            // Redirect to indexx.html
+            window.location.href = "indexx.html";
+        });
+
+        // Sign In button clicked
+        document.getElementById("signinBtn").addEventListener("click", function() {
+            // Redirect to indexx.html
+            window.location.href = "1.html";
+        });
+
+        // Your other JavaScript code here
+    </script>
+</body>
+</html>

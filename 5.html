@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chef Hub</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #555;
+        }
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            border: 5px solid #ff6600;
+        }
+        .profile-info {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .profile-info label {
+            font-weight: bold;
+            color: #666;
+        }
+        .profile-info p {
+            margin: 5px 0;
+        }
+        .btn {
+            display: inline-block;
+            width: 150px;
+            padding: 10px 0;
+            margin: 10px 10px 0;
+            text-align: center;
+            color: #fff;
+            background: linear-gradient(90deg, #ff6600, #ff3300);
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .btn:hover {
+            background: linear-gradient(90deg, #ff3300, #ff6600);
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Chef Hub</h2>
+        <div class="profile-info">
+            <label for="name">Name:</label>
+            <p id="name">Chef John</p>
+            <label for="email">Email:</label>
+            <p id="email">john@example.com</p>
+            <label for="location">Location:</label>
+            <p id="location">Downtown</p>
+            <label for="hourlyRate">Hourly Rate ($):</label>
+            <p id="hourlyRate">$50</p>
+            <label for="specialties">Specialties:</label>
+            <p id="specialties">Italian, French, Desserts</p>
+        </div>
+        <button class="btn" onclick="toggleViewOrders()">View Orders</button>
+        <button class="btn" onclick="toggleEditProfile()">Edit Profile</button>
+
+        <div id="viewOrdersSection" class="hidden">
+            <h2>View Orders</h2>
+            <!-- Include order information dynamically here -->
+            <p>Order #1: Italian Pasta - John Doe</p>
+        </div>
+
+        <div id="editProfileSection" class="hidden">
+            <h2>Edit Profile</h2>
+            <form onsubmit="return updateProfile()">
+                <div class="profile-info">
+                    <label for="editName">Name:</label>
+                    <input type="text" id="editName" value="Chef John">
+                    <label for="editEmail">Email:</label>
+                    <input type="email" id="editEmail" value="john@example.com">
+                    <label for="editLocation">Location:</label>
+                    <input type="text" id="editLocation" value="Downtown">
+                    <label for="editHourlyRate">Hourly Rate ($):</label>
+                    <input type="text" id="editHourlyRate" value="50">
+                    <label for="editSpecialties">Specialties:</label>
+                    <input type="text" id="editSpecialties" value="Italian, French, Desserts">
+                </div>
+                <button type="submit" class="btn">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function toggleViewOrders() {
+            var viewOrdersSection = document.getElementById("viewOrdersSection");
+            var editProfileSection = document.getElementById("editProfileSection");
+
+            viewOrdersSection.classList.remove("hidden");
+            editProfileSection.classList.add("hidden");
+        }
+
+        function toggleEditProfile() {
+            var viewOrdersSection = document.getElementById("viewOrdersSection");
+            var editProfileSection = document.getElementById("editProfileSection");
+
+            viewOrdersSection.classList.add("hidden");
+            editProfileSection.classList.remove("hidden");
+        }
+
+        function updateProfile() {
+            var newName = document.getElementById("editName").value;
+            var newEmail = document.getElementById("editEmail").value;
+            var newLocation = document.getElementById("editLocation").value;
+            var newHourlyRate = document.getElementById("editHourlyRate").value;
+            var newSpecialties = document.getElementById("editSpecialties").value;
+
+            document.getElementById("name").textContent = newName;
+            document.getElementById("email").textContent = newEmail;
+            document.getElementById("location").textContent = newLocation;
+            document.getElementById("hourlyRate").textContent = "$" + newHourlyRate;
+            document.getElementById("specialties").textContent = newSpecialties;
+
+            // Optionally, you can send this information to a server for storage
+
+            // Prevent form submission
+            return false;
+        }
+    </script>
+</body>
+</html>
