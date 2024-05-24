@@ -86,5 +86,12 @@
             <button type="submit" class="btn">Submit</button>
         </form>
     </div>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            window.location.href = '5.html'; // Redirect to 5.html
+        });
+    </script>
 </body>
 </html>
